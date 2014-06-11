@@ -12,7 +12,6 @@ func md5HashWithSalt(input, salt string) string {
     hasher.Write([]byte(input))
     return hex.EncodeToString(hasher.Sum(nil))
 }
- 
 
 func main () {
 	salt := "agent.io"

@@ -10,6 +10,7 @@ import (
 type Person struct {
 	Name      string
 	Phone     string
+	Age	      int
 	Timestamp time.Time
 }
 
@@ -53,8 +54,9 @@ func main() {
 	}
 
 	// Insert Datas
-	err = c.Insert(&Person{Name: "Ale", Phone: "+55 53 1234 4321", Timestamp: time.Now()},
-		&Person{Name: "Cla", Phone: "+66 33 1234 5678", Timestamp: time.Now()})
+	err = c.Insert(
+		&Person{Name: "Ale", Age:30, Phone: "+55 53 1234 4321", Timestamp: time.Now()},
+		&Person{Name: "Cla", Age:25, Phone: "+66 33 1234 5678", Timestamp: time.Now()})
 
 	if err != nil {
 		panic(err)
